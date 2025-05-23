@@ -1,0 +1,16 @@
+modules:
+  trigger:
+    - key: trigger-app-hello-world
+      function: main
+      events:
+        - avi:jira:created:issue
+      filter:
+        ignoreSelf: false
+        expression: event.issue.fields.summary != null
+  function:
+    - key: main
+      handler: index.run
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/2b0b8b76-6ce4-4540-8bc6-9793d9daded6
