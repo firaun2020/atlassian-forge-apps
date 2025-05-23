@@ -1,0 +1,19 @@
+modules:
+  jira:issuePanel:
+    - key: forge-demo-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: forge-demo
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+  id: ari:cloud:ecosystem::app/1ca847d1-b88a-4a5d-85e6-6c8cbf2bf194
