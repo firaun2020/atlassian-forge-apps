@@ -9,7 +9,7 @@ const App = () => {
   }, []);
   return (
     <>
-      <Text>First Text!</Text>
+      <Text>First Text from FE!</Text>
       <Text>{data ? data : 'Loading...'}</Text>
     </>
   );
