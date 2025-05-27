@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ForgeReconciler, { Text, Em, Strong } from '@forge/react';
+import ForgeReconciler, { Text, Em, Strong, Lozenge, Button, Stack } from '@forge/react';
 import { invoke } from '@forge/bridge';
 
 const App = () => {
@@ -11,6 +11,12 @@ const App = () => {
     <>
       <Text><Em>First Text from FE!</Em></Text>
       <Text><Strong>{data ? data : 'Loading...'}</Strong></Text>
+
+      <Stack alignInline='start' space='space.200'>
+        <Lozenge appearance='success'>RISK ANAYLYSIS </Lozenge>
+        <Button> THIS BUTTON </Button>
+      </Stack>
+
     </>
   );
 };
