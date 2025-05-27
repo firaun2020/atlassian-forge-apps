@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ForgeReconciler, { Text } from '@forge/react';
+import ForgeReconciler, { Text, Em, Strong } from '@forge/react';
 import { invoke } from '@forge/bridge';
 
 const App = () => {
@@ -9,8 +9,8 @@ const App = () => {
   }, []);
   return (
     <>
-      <Text>First Text from FE!</Text>
-      <Text>{data ? data : 'Loading...'}</Text>
+      <Text><Em>First Text from FE!</Em></Text>
+      <Text><Strong>{data ? data : 'Loading...'}</Strong></Text>
     </>
   );
 };
@@ -20,3 +20,30 @@ ForgeReconciler.render(
     <App />
   </React.StrictMode>
 );
+
+
+
+// EARLIER VERSION
+
+// import React, { useEffect, useState } from 'react';
+// import ForgeReconciler, { Text } from '@forge/react';
+// import { invoke } from '@forge/bridge';
+
+// const App = () => {
+//   const [data, setData] = useState(null);
+//   useEffect(() => {
+//     invoke('getText', { example: 'my-invoke-variable' }).then(setData);
+//   }, []);
+//   return (
+//     <>
+//       <Text>First Text from FE!</Text>
+//       <Text>{data ? data : 'Loading...'}</Text>
+//     </>
+//   );
+// };
+
+// ForgeReconciler.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
