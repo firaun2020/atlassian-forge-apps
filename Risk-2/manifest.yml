@@ -1,0 +1,31 @@
+modules:
+  jira:issuePanel:
+    - key: risk-2-hello-world-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: Risk-2
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/d73d890f-e098-4b01-85c6-4376e52145e6
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+  external:
+    fetch:
+      backend:
+        - 5366-213-52-61-2.ngrok-free.app
+        - https://catfact.ninja
+        - httpbin.org
